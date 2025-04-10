@@ -2,55 +2,24 @@ local Library = require(game:GetService("ReplicatedStorage"):WaitForChild("Fluen
 
 local Window = Library:Window{
     Title = `Fluent {Library.Version}`,
-    SubTitle = "Interface de Exemplo",
-    TabWidth = 160,
-    Size = UDim2.fromOffset(580, 460),
+    SubTitle = "Teste Básico",
     Acrylic = true,
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.LeftControl
 }
 
-local Tabs = {
-    Main = Window:Tab{Title = "Main", Icon = "phosphor-users-bold"},
-    Settings = Window:Tab{Title = "Settings", Icon = "settings"}
-}
+local MainTab = Window:Tab{Title = "Principal", Icon = "home"}
 
-Tabs.Main:Button{
-    Title = "Ativar Farm",
-    Description = "Ativa o sistema de farm.",
+MainTab:Button{
+    Title = "Clique aqui",
+    Description = "Um botão de teste",
     Callback = function()
-        print("Farm ativado!")
-    end
-}
-
-Tabs.Main:Toggle{
-    Title = "Modo Rápido",
-    Default = false,
-    Callback = function(state)
-        print("Modo Rápido:", state)
-    end
-}
-
-Tabs.Settings:Dropdown{
-    Title = "Tema",
-    Values = {"Dark", "Light", "Amoled"},
-    Default = "Dark",
-    Callback = function(option)
-        print("Tema selecionado:", option)
-    end
-}
-
-Tabs.Settings:Keybind{
-    Title = "Tecla do Menu",
-    Mode = "Toggle",
-    Default = Enum.KeyCode.LeftControl,
-    Callback = function(key)
-        print("Nova tecla definida:", key)
+        print("Botão clicado!")
     end
 }
 
 Library:Notify{
-    Title = "Fluent",
-    Content = "Script carregado com sucesso!",
+    Title = "Sucesso!",
+    Content = "A interface foi carregada.",
     Duration = 5
 }
