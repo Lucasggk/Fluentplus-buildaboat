@@ -61,7 +61,7 @@ Main:AddToggle(".", {
                     end)
 
 							
-                    task.wait(12)
+                    task.wait(14)
                 end
             end)
 
