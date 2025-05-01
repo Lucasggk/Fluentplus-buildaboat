@@ -4,6 +4,10 @@ end
 
 local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/discoart/FluentPlus/refs/heads/main/release.lua", true))()
 
+
+local Show_Button = false 
+local Button_Icon = "" 
+
 local Window = Fluent:CreateWindow({
     Title = "Build A Boat",
     SubTitle = "Feito por Lucas",
