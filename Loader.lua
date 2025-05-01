@@ -5,12 +5,10 @@ end
 local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/discoart/FluentPlus/refs/heads/main/release.lua", true))()
 
 
-local Button_Icon = "rbxassetid://137592432303285"
-
 local Window = Fluent:CreateWindow({
     Title = "Build A Boat",
     SubTitle = "Feito por Lucas",
-    TabWidth = 160,
+    TabWidth = 10,
     Size = UDim2.fromOffset(400, 340),
     Acrylic = false,
     Theme = "Dark"
