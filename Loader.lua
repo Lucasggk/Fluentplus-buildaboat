@@ -4,7 +4,7 @@ end
 
 local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/discoart/FluentPlus/refs/heads/main/release.lua", true))()
 
-Button_Icon = 'rbxassetid://137592432303285'
+Button_Icon = "rbxassetid://137592432303285"
               
 
 local Window = Fluent:CreateWindow({
