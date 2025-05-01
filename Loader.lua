@@ -7,6 +7,7 @@ local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/discoa
 
 local Window = Fluent:CreateWindow({
     Title = "Build A Boat",
+    toggleKeyIcon = "rbxassetid://137592432303285",
     SubTitle = "Feito por Lucas",
     TabWidth = 150,
     Size = UDim2.fromOffset(400, 340),
