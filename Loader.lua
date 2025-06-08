@@ -163,3 +163,7 @@ loja:AddButton({
         end
     end
 })
+
+https://raw.githubusercontent.com/Lucasggk/Fluentplus-buildaboat/refs/heads/main/Teste.lua
+local sc = getgenv().Script 
+loadstring(sc)()
