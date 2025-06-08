@@ -113,14 +113,7 @@ task.spawn(function()
     end
 end)
 
-Main:AddButton({
-    Title = "Desativar farm",
-    Callback = function()
-        Toggle:SetValue(false)
-    end
-})
-
-
+-- outro tab
 
 local ipv = 1
 local ipc 
