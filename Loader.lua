@@ -35,7 +35,7 @@ local config = Window:AddTab({
     Icon = "settings"
 })
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))() 
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 InterfaceManager:SetLibrary(Fluent) 
 InterfaceManager:SetFolder("BuildABoat") 
 InterfaceManager:BuildInterfaceSection(config) 
