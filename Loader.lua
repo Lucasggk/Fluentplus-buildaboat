@@ -118,7 +118,7 @@ loja:AddInput("", {
     Default = "1",
     Placeholder = "Número",
     Numeric = true,
-    Finished = true,
+    Finished = false,
     Callback = function(Value)
         ipv = Value 
     end
@@ -144,7 +144,7 @@ loja:AddButton({
             local vtdc = vt - md
             Fluent:Notify({
                 Title = "Dinheiro insuficiente",
-                Content = "Dinheiro que falta: " .. vtdc .. " Dinheiro que tem: " .. md,
+                Content = "Dinheiro que falta: " .. vtdc .. " \nDinheiro que tem: " .. md,
                 SubContent = "",
                 Duration = 5
             })
