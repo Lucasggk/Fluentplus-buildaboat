@@ -36,7 +36,7 @@ local loja = Window:AddTab({
 local AutoFarmAtivo = false
 local AutoFarmConnection
 
-Main:AddToggle(".", {
+local toggle = Main:AddToggle(".", {
     Title = "Auto Farm",
     Description = "Farma dinheiro e bloco de ouro",
     Default = false,
@@ -102,6 +102,13 @@ local dnatual = Main:AddParagraph({
     Title = "Dinheiro ganhado/perdido ao executar o script",
     Content = "Carregando..."
 })
+
+Main:AddButton({
+	Title = "Desativar farm",
+	Callback = function()
+			Toggle:SetValue(false)
+		end
+	})
 
 task.spawn(function()
     while true do 
