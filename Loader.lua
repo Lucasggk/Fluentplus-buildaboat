@@ -137,7 +137,7 @@ loja:AddButton({
     Title = "Compra o baú selecionado + quantidade",
     Callback = function()
         local vt = (tonumber(vpi) or 0) * (tonumber(ipv) or 0)
-        local md = 
+        local md = 1000
         if vt > md then
             local vtdc = vt - md
             Fluent:Notify({
