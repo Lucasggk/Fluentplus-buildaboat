@@ -30,7 +30,16 @@ local loja = Window:AddTab({
     Icon = "list"
 })
 
+local config = Window:AddTab({
+    Title = "configurações",
+    Icon = "settings"
+})
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+InterfaceManager:SetLibrary(Fluent)
+InterfaceManager:SetFolder("BuildABoat")
+InterfaceManager:BuildInterfaceSection(config)
+config:AddButton({Title = "Destruir Interface",Callback = function() Fluent:Destroy() end })
 
 
 local AutoFarmAtivo = false
