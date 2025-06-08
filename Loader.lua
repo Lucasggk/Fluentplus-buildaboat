@@ -2,7 +2,7 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
-local dinheiro = game.Players.LocalPlayer:WaitForChild("Data"):WaitForChild("Gold").Value
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Lucasggk/Fluentplus-buildaboat/refs/heads/main/Fix%20ui%20name.lua"))()
 
 local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/discoart/FluentPlus/refs/heads/main/release.lua", true))()
 
@@ -83,11 +83,14 @@ Main:AddToggle(".", {
     end
 })
 
-
+local function getMoney()
+    return game.Players.LocalPlayer:WaitForChild("Data"):WaitForChild("Gold").Value
+end
 
 local ipv = 1
 local ipc 
 local vpi
+local md = getMoney()
 
 local Dropdown = loja:AddDropdown("", {
     Title = "Baú para comprar\n",
@@ -139,7 +142,7 @@ loja:AddButton({
     Title = "Compra o baú selecionado + quantidade",
     Callback = function()
         local vt = (tonumber(vpi) or 0) * (tonumber(ipv) or 0)
-        local md = game.Players.LocalPlayer:WaitForChild("Data"):WaitForChild("Gold").Value
+        local md = getMoney()
         if vt > md then
             local vtdc = vt - md
             Fluent:Notify({
