@@ -147,12 +147,19 @@ loja:AddButton({
             local vtdc = vt - md
             Fluent:Notify({
                 Title = "Dinheiro insuficiente",
-                Content = "Dinheiro que falta: " .. vtdc .. " \nDinheiro que tem: " .. md,
-                SubContent = "",
+                Content = "Dinheiro que falta: " .. vtdc,
+                SubContent = "Dinheiro que tem: " .. md,
                 Duration = 5
             })
         else
             Comprar()
+            local it_qu = "Item: " .. ipc .. " Quantidade: " .. ipv
+            Fluent:Notify({
+                Title = "Compra Realizada",
+                Content = "Valor total: " .. vt,
+                SubContent = it_qu,
+                Duration = 5
+            })
         end
     end
 })
