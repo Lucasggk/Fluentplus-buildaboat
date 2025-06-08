@@ -113,11 +113,6 @@ task.spawn(function()
     end
 end)
 
-
-Toggle:OnChanged(function(Value)
-    print(Value)
-end)
-
 Main:AddButton({
     Title = "Desativar farm",
     Callback = function()
