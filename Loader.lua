@@ -103,6 +103,10 @@ local dnatual = Main:AddParagraph({
     Content = "Carregando..."
 })
 
+Toggle:OnChanged(function()
+    print(Value)
+end)
+
 Main:AddButton({
 	Title = "Desativar farm",
 	Callback = function()
