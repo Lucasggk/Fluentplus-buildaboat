@@ -2,14 +2,6 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
-if game.PlaceId ~= 537413528 then
-    local TeleportService = game:GetService("TeleportService")
-    local Players = game:GetService("Players")
-    local player = Players.LocalPlayer
-
-    TeleportService:Teleport(537413528, player)
-end
-
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Lucasggk/Fluentplus-buildaboat/refs/heads/main/Fix%20ui%20name.lua"))()
 local dni = game.Players.LocalPlayer:WaitForChild("Data"):WaitForChild("Gold").Value
 
