@@ -17,9 +17,17 @@ local Window = Fluent:CreateWindow({
 })
 
 local Main = Window:AddTab({
-    Title = "Main",
+    Title = "Main farm",
     Icon = "home"
 })
+
+local loja = Window:AddTab({
+    Title = "loja",
+    Icon = "list"
+})
+
+
+
 
 local AutoFarmAtivo = false
 local AutoFarmConnection
@@ -72,6 +80,77 @@ Main:AddToggle(".", {
             if AutoFarmConnection then
                 task.cancel(AutoFarmConnection)
             end
+        end
+    end
+})
+
+
+
+local ipv = 1
+local ipc 
+local vpi
+
+local Dropdown = loja:AddDropdown("", {
+    Title = "Baú para comprar\n",
+    Description = "Selecione o baú\n",
+    Values = {"Common Chest", "Uncommon Chest", "Rare Chest", "Epic Chest", "Legendary Chest"},
+    Multi = false,
+    Default = "Common Chest",
+})
+
+Dropdown:OnChanged(function(Value)
+    ipc = Value
+    if ipc == "Common Chest" then
+        vpi = 5
+    elseif ipc == "Uncommon Chest" then
+        vpi = 15
+    elseif ipc == "Rare Chest" then
+        vpi = 45
+    elseif ipc == "Epic Chest" then
+        vpi = 135
+    elseif ipc == "Legendary Chest" then
+        vpi = 405
+    end
+end)
+
+loja:AddInput("", {
+    Title = "Número de item para comprar\n",
+    Description = "Selecione o tanto de itens por compra.\n",
+    Default = "1",
+    Placeholder = "Número",
+    Numeric = true,
+    Finished = true,
+    Callback = function(Value)
+        ipv = Value 
+    end
+})
+
+function Comprar()
+    if ipc and ipv then
+        local args = {
+            [1] = ipc,
+            [2] = tonumber(ipv)
+        }
+
+        workspace.ItemBoughtFromShop:InvokeServer(unpack(args))
+    end
+end
+
+loja:AddButton({
+    Title = "Compra o baú selecionado + quantidade",
+    Callback = function()
+        local vt = (tonumber(vpi) or 0) * (tonumber(ipv) or 0)
+        local md = 
+        if vt > md then
+            local vtdc = vt - md
+            Fluent:Notify({
+                Title = "Dinheiro insuficiente",
+                Content = "Dinheiro que falta: " .. vtdc .. " Dinheiro que tem: " .. md,
+                SubContent = "",
+                Duration = 5
+            })
+        else
+            Comprar()
         end
     end
 })
