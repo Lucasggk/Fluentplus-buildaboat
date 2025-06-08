@@ -164,6 +164,6 @@ loja:AddButton({
     end
 })
 
-https://raw.githubusercontent.com/Lucasggk/Fluentplus-buildaboat/refs/heads/main/Teste.lua
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Lucasggk/Fluentplus-buildaboat/refs/heads/main/Teste.lua"))()
 local sc = getgenv().Script 
 loadstring(sc)()
