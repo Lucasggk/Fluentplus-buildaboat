@@ -3,7 +3,20 @@ if not game:IsLoaded() then
 end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Lucasggk/Fluentplus-buildaboat/refs/heads/main/Fix%20ui%20name.lua"))()
+local dni = game.Players.LocalPlayer:WaitForChild("Data"):WaitForChild("Gold").Value
 
+local function getMoney()
+    return game.Players.LocalPlayer:WaitForChild("Data"):WaitForChild("Gold").Value
+end
+
+local dnat
+task.spawn(function()
+    while true do 
+        dnat = getMoney()
+        task.wait(0.5)
+    end
+end)
+			
 local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/discoart/FluentPlus/refs/heads/main/release.lua", true))()
 
 local Window = Fluent:CreateWindow({
@@ -83,9 +96,16 @@ Main:AddToggle(".", {
     end
 })
 
-local function getMoney()
-    return game.Players.LocalPlayer:WaitForChild("Data"):WaitForChild("Gold").Value
-end
+Main:AddParagraph({
+    Title = "Dinheiro ao executar o script: " .. dni,
+})
+
+Main:AddParagraph({
+    Title = "Dinheiro ganhado/perdido ao executar o script",
+    Content = 
+})
+
+
 
 local ipv = 1
 local ipc 
