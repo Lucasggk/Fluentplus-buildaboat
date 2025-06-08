@@ -102,7 +102,7 @@ task.spawn(function()
     while true do 
         dnat = game.Players.LocalPlayer:WaitForChild("Data"):WaitForChild("Gold").Value
 	diferenca = (dnat - dni)
-        dnatual:SetContent(diferenca)
+        dnatual:SetDesc(diferenca)
         task.wait(0.5)
     end
 end)
