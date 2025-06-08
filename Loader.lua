@@ -153,8 +153,8 @@ loja:AddButton({
             })
         else
             Comprar()
-            local it_qu = "Item: " .. ipc .. " Quantidade: " .. ipv
-            Fluent:Notify({
+            local it_qu = "Item: " .. ipc .. " | Quantidade: " .. ipv
+	    Fluent:Notify({
                 Title = "Compra Realizada",
                 Content = "Valor total: " .. vt,
                 SubContent = it_qu,
