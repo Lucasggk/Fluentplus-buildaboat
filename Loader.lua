@@ -103,17 +103,6 @@ local dnatual = Main:AddParagraph({
     Content = "Carregando..."
 })
 
-Toggle:OnChanged(function()
-    print(Value)
-end)
-
-Main:AddButton({
-	Title = "Desativar farm",
-	Callback = function()
-			Toggle:SetValue(false)
-		end
-	})
-
 task.spawn(function()
     while true do 
         dnat = game.Players.LocalPlayer:WaitForChild("Data"):WaitForChild("Gold").Value
@@ -124,6 +113,17 @@ task.spawn(function()
     end
 end)
 
+
+Toggle:OnChanged(function(Value)
+    print(Value)
+end)
+
+Main:AddButton({
+    Title = "Desativar farm",
+    Callback = function()
+        Toggle:SetValue(false)
+    end
+})
 
 
 
