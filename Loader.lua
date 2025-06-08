@@ -92,6 +92,10 @@ Main:AddParagraph({
     Title = "Dinheiro ao executar o script: " .. dni,
 })
 
+local dinatual = Main:AddParagraph({
+    Title = "Dinheiro ao executar o script: " .. dnat,
+})
+
 local dnat
 local dnatual = Main:AddParagraph({
     Title = "Dinheiro ganhado/perdido ao executar o script",
@@ -103,6 +107,7 @@ task.spawn(function()
         dnat = game.Players.LocalPlayer:WaitForChild("Data"):WaitForChild("Gold").Value
 	diferenca = (dnat - dni)
         dnatual:SetDesc(diferenca)
+	dinatual:SetTitle("Dinheiro ao executar o script: " .. dnat)
         task.wait(0.5)
     end
 end)
