@@ -36,7 +36,7 @@ local loja = Window:AddTab({
 local AutoFarmAtivo = false
 local AutoFarmConnection
 
-local toggle = Main:AddToggle(".", {
+local Toggle = Main:AddToggle(".", {
     Title = "Auto Farm",
     Description = "Farma dinheiro e bloco de ouro",
     Default = false,
