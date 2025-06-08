@@ -8,14 +8,6 @@ local dni = game.Players.LocalPlayer:WaitForChild("Data"):WaitForChild("Gold").V
 local function getMoney()
     return game.Players.LocalPlayer:WaitForChild("Data"):WaitForChild("Gold").Value
 end
-
-local dnat
-task.spawn(function()
-    while true do 
-        dnat = getMoney()
-        task.wait(0.5)
-    end
-end)
 			
 local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/discoart/FluentPlus/refs/heads/main/release.lua", true))()
 
@@ -100,10 +92,21 @@ Main:AddParagraph({
     Title = "Dinheiro ao executar o script: " .. dni,
 })
 
-Main:AddParagraph({
+local dnat
+local dnatual = Main:AddParagraph({
     Title = "Dinheiro ganhado/perdido ao executar o script",
-    Content = 
+    Content = "Carregando..."
 })
+
+task.spawn(function()
+    while true do 
+        dnat = game.Players.LocalPlayer:WaitForChild("Data"):WaitForChild("Gold").Value
+	diferenca = (dnat - dni)
+        dnatual:SetContent(diferenca)
+        task.wait(0.5)
+    end
+end)
+
 
 
 
