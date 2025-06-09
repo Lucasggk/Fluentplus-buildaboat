@@ -270,7 +270,7 @@ selectquest:OnChanged(function(Value)
         Futeboll(selteam)
         selectquest:SetValue()
     elseif Value == "[9] Ice" then
-        gelo()
+        gelo(selteam)
         selectquest:SetValue()
     end
 end)
