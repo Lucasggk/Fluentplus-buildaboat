@@ -7,9 +7,18 @@ function getquest(a)
     task.wait(1)
 end
 
-function noti()
+function Teleportar()
+    local Player = game.Players.LocalPlayer
+    local HRP = Player.Character and Player.Character:FindFirstChild("HumanoidRootPart")
+
+    if HRP then
+        HRP.CFrame = CFrame.new(-50, 139, -697)
+    end
+end
+
+function noti(fr)
     Fluent:Notify({
-        Title = "Fazendo missão..",
+        Title = "Fazendo missão: ".. fr,
         Content = "Aguarde",
         Duration = 3
     })
@@ -17,7 +26,7 @@ end
 
 function Cloud(selteam)
     getquest(1)
-    noti()
+    noti("Cloud")
     local plr = game.Players.LocalPlayer
     local char = plr.Character or plr.CharacterAdded:Wait()
     local hrp = char:WaitForChild("HumanoidRootPart", 5)
@@ -30,7 +39,7 @@ end
 
 function Target(selteam)
     getquest(2)
-    noti()
+    noti("Target")
     local plr = game.Players.LocalPlayer
     local char = plr.Character or plr.CharacterAdded:Wait()
     local hrp = char:WaitForChild("HumanoidRootPart", 5)
@@ -52,7 +61,7 @@ end
 
 function Ramp(selteam)
     getquest(3)
-    noti()
+    noti("Ramp")
     local plr = game.Players.LocalPlayer
     local char = plr.Character or plr.CharacterAdded:Wait()
     local hrp = char:WaitForChild("HumanoidRootPart", 5)
@@ -65,7 +74,7 @@ end
 
 function gelo()
     getquest(9)
-    noti()
+    noti("Ice")
     local TweenService = game:GetService("TweenService")
     local Player = game.Players.LocalPlayer
     local HRP = Player.Character:WaitForChild("HumanoidRootPart")
@@ -91,7 +100,7 @@ end
 
 function manteiga(selteam)
     getquest(4)
-    noti()
+    noti("Better")
     local objeto = selteam.Quest.Butter.PPart
     local clickDetector = objeto:FindFirstChild("ClickDetector")
 
