@@ -42,7 +42,7 @@ function Target(selteam)
 end
 
 function Futeboll(selteam)
-    getquest(3)
+    getquest(8)
     Fluent:Notify({
         Title = "Fazendo missão..",
         Content = "Sem suporte para essa missão no momento.",
@@ -51,7 +51,7 @@ function Futeboll(selteam)
 end
 
 function Ramp(selteam)
-    getquest(4)
+    getquest(3)
     noti()
     local plr = game.Players.LocalPlayer
     local char = plr.Character or plr.CharacterAdded:Wait()
@@ -61,4 +61,13 @@ function Ramp(selteam)
     if hrp and target then
         hrp.CFrame = target.CFrame * CFrame.new(0, -15, 0)
     end
+end
+
+function gelo()
+    getquest(9)
+    noti()
+    local hrp = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+    hrp.CFrame = CFrame.new(76, -7, 1358)
+    task.wait(3)
+    hrp.CFrame = CFrame.new(-53, -363, 9502)
 end
