@@ -88,3 +88,17 @@ function gelo()
         HRP.CFrame = CFrame.new(-53, -363, 9502)
     end
 end
+
+function manteiga(selteam)
+    getquest(4)
+
+    local objeto = selteam.Quest.Butter.PPart
+    local clickDetector = objeto:FindFirstChild("ClickDetector")
+
+    while objeto.Parent and objeto:IsDescendantOf(game) do
+        if clickDetector then
+            fireclickdetector(clickDetector)
+        end
+        task.wait()
+    end
+end
