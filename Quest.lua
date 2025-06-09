@@ -3,10 +3,17 @@ function getquest(a)
     task.wait(1)
 end
 
-
+function noti()
+    Fluent:Notify({
+        Title = "Fazendo missão..",
+        Content = "Aguarde",
+        Duration = 3
+    })
+end
 
 function Cloud(selteam)
     getquest(1)
+    noti()
     local plr = game.Players.LocalPlayer
     local char = plr.Character or plr.CharacterAdded:Wait()
     local hrp = char:WaitForChild("HumanoidRootPart", 5)
