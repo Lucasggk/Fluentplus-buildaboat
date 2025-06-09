@@ -10,14 +10,7 @@ local function getMoney()
     return game.Players.LocalPlayer:WaitForChild("Data"):WaitForChild("Gold").Value
 end
 			
-local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/discoart/FluentPlus/refs/heads/main/release.lua", true))()
-function noti()
-    Fluent:Notify({
-        Title = "Fazendo missão..",
-        Content = "Aguarde",
-        Duration = 3
-    })
-end
+local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/discoart/FluentPlus/refs/heads/main/release.lua", true))() 
 
 
 local Window = Fluent:CreateWindow({
@@ -252,7 +245,7 @@ local section = quest:AddSection("Escolha a Quest: ")
 local selectquest = quest:AddDropdown("", {
     Title = "Escolha a quest\n",
     Description = "",
-    Values = {"[1] Cloud"}
+    Values = {"[1] Cloud"},
     Multi = false,
     Default = "",
 })
