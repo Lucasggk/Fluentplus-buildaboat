@@ -17,7 +17,7 @@ local Window = Fluent:CreateWindow({
     Title = "Build A Boat",
     SubTitle = "Made By Lucas",
     TabWidth = 150,
-    Size = UDim2.fromOffset(600, 380),
+    Size = UDim2.fromOffset(550, 380),
     Acrylic = false,
     Theme = "Dark"
 })
