@@ -42,6 +42,7 @@ function Target(selteam)
 end
 
 function Futeboll(selteam)
+    getquest(3)
     Fluent:Notify({
         Title = "Fazendo missão..",
         Content = "Sem suporte para essa missão no momento.",
@@ -50,7 +51,7 @@ function Futeboll(selteam)
 end
 
 function Ramp(selteam)
-    getquest(1)
+    getquest(4)
     noti()
     local plr = game.Players.LocalPlayer
     local char = plr.Character or plr.CharacterAdded:Wait()
