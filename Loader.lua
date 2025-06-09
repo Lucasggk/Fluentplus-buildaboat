@@ -241,11 +241,3 @@ end)
 
 local section = quest:AddSection("Escolha a Quest: ")
 
-quest:AddButton({
-    Title = "Executar Cloud",
-    Description = "Chama a função Cloud()",
-    Callback = function()
-        Cloud(selteam)
-	task.wait(2)
-    end
-})
