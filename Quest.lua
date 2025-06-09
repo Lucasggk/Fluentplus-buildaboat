@@ -63,10 +63,30 @@ function Ramp(selteam)
     end
 end
 
-function gelo()
+function gelo(selteam)
     getquest(9)
-    noti()
-    local hrp = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+
+    local tool = game:GetService("Players").LocalPlayer.Character.BuildingTool.RF
+    local plr = game:GetService("Players").LocalPlayer
+    local wood = plr.Data.WoodBlock.Value
+
+    local function place(zone, cf1, cf2)
+        tool:InvokeServer("WoodBlock", wood, zone, cf1, true, cf2, false)
+    end
+
+    place(workspace:FindFirstChild("Really blueZone"), CFrame.new(6, 6.1, -143), CFrame.new(364.834, -11.9, 295.493) * CFrame.Angles(0, -math.pi/2, 0))
+    place(workspace.WhiteZone, CFrame.new(28, 6.1, -126), CFrame.new(-25.566, -11.9, -471.507))
+    place(workspace.BlackZone, CFrame.new(10, 6.1, -126), CFrame.new(-454.966, -11.9, -82.107) * CFrame.Angles(0, math.pi/2, 0))
+    place(workspace.CamoZone, CFrame.new(8, 6.1, -137), CFrame.new(-465.966, -11.9, 277.893) * CFrame.Angles(0, math.pi/2, 0))
+    place(workspace.MagentaZone, CFrame.new(3, 6.1, -143), CFrame.new(364.834, -11.9, 650.693) * CFrame.Angles(0, -math.pi/2, 0))
+    place(workspace:FindFirstChild("Really redZone"), CFrame.new(2, 6.1, -144), CFrame.new(365.834, -11.9, -66.707) * CFrame.Angles(0, -math.pi/2, 0))
+    place(workspace:FindFirstChild("New YellerZone"), CFrame.new(1, 6.1, -137), CFrame.new(-465.966, -11.9, 642.893) * CFrame.Angles(0, math.pi/2, 0))
+
+    selteam.VoteLaunchRE:FireServer()
+
+    local hrp = plr.Character and plr.Character:FindFirstChild("HumanoidRootPart")
+    if not hrp then return end
+
     hrp.CFrame = CFrame.new(76, -7, 1358)
     task.wait(3)
     hrp.CFrame = CFrame.new(-53, -363, 9502)
