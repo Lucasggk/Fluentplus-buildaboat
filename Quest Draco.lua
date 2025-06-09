@@ -1,3 +1,4 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Lucasggk/Fluentplus-buildaboat/refs/heads/main/Quest.lua"))()
 local glue = game:GetService("Players").LocalPlayer.Data.Glue.Value
 local spike = game:GetService("Players").LocalPlayer.Data.SpikeTrap.Value
 local spike_suf = 20
@@ -19,6 +20,8 @@ if spike < spike_suf then
 end 
 end
 
-function getglue()
+function getglue(selteam)
   if glue < 3 then
-    
+    manteiga(selteam)
+  end
+end
