@@ -259,14 +259,18 @@ local selectquest = quest:AddDropdown("", {
 selectquest:OnChanged(function(Value)
     if Value == "[1] Cloud" then
         Cloud(selteam)
+        selectquest:SetValue()
     elseif Value == "[2] Target" then
         Target(selteam)
+        selectquest:SetValue()
     elseif Value == "[3] Ramp" then
         Ramp(selteam)
+        selectquest:SetValue()
     elseif Value == "[8] Futeboll" then
         Futeboll(selteam)
+        selectquest:SetValue()
     elseif Value == "[9] Ice" then
         gelo()
+        selectquest:SetValue()
     end
-    selectquest:SetValue()
 end)
