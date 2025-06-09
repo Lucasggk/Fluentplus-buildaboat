@@ -245,23 +245,28 @@ local section = quest:AddSection("Escolha a Quest: ")
 local selectquest = quest:AddDropdown("", {
     Title = "Escolha a quest\n",
     Description = "",
-    Values = {"[1] Cloud", "[2] Target", "[3] Futeboll", "[4] Ramp"},
+    Values = {
+        "[1] Cloud",
+        "[2] Target",
+        "[3] Ramp",
+        "[8] Futeboll",
+        "[9] Ice"
+    },
     Multi = false,
     Default = "",
 })
 
 selectquest:OnChanged(function(Value)
     if Value == "[1] Cloud" then
-	Cloud(selteam)
-        selectquest:SetValue()
+        Cloud(selteam)
     elseif Value == "[2] Target" then
-	Target(selteam)
-	selectquest:SetValue()
-    elseif Value == "[3] Futeboll" then
-	Futeboll(selteam)
-        selectquest:SetValue()
-    elseif Value == "[4] Ramp" then
-	Ramp(selteam)
-	selectquest:SetValue()
+        Target(selteam)
+    elseif Value == "[3] Ramp" then
+        Ramp(selteam)
+    elseif Value == "[8] Futeboll" then
+        Futeboll(selteam)
+    elseif Value == "[9] Ice" then
+        gelo()
     end
+    selectquest:SetValue()
 end)
