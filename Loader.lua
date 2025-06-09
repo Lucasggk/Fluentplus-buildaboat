@@ -86,12 +86,15 @@ local Toggle = Main:AddToggle(".", {
                     moveToPosition(Vector3.new(-59.102, 65.665, 8656.818), 650)
                     moveToPosition(Vector3.new(-54.430, -357.643, 9500.155), 500)
 
+                    for i = 1, 5 do
+                        HRP.CFrame = CFrame.new(-53, -363, 9502)
+                    end
+
                     task.wait(5)
                     pcall(function()
                         workspace.ClaimRiverResultsGold:FireServer()
                     end)
 
-							
                     task.wait(14)
                 end
             end)
@@ -103,6 +106,7 @@ local Toggle = Main:AddToggle(".", {
         end
     end
 })
+
 
 Main:AddParagraph({
     Title = "Dinheiro ao executar o script: " .. dni,
@@ -270,7 +274,7 @@ selectquest:OnChanged(function(Value)
         Futeboll(selteam)
         selectquest:SetValue()
     elseif Value == "[9] Ice" then
-        gelo(selteam)
+        gelo()
         selectquest:SetValue()
     end
 end)
