@@ -208,6 +208,10 @@ loja:AddButton({
 
 -- outro tab
 
+function pegarm(a)
+workspace.QuestMakerEvent:FireServer(a)
+end
+
 local selteam
 
 local TeamSelect = quest:AddDropdown("TeamSelect", {
@@ -240,9 +244,12 @@ quest:AddButton({
     Title = "Teleportar para Quest",
     Description = "Teleporta para o ponto da missão do time selecionado",
     Callback = function()
+        pegarm(0)
+        pegarm(1)
         local plr = game.Players.LocalPlayer
-        if plr.Character and selteam and selteam:FindFirstChild("Quest") and selteam.Quest:FindFirstChild("Cloud") then
-            plr.Character:PivotTo(selteam.Quest.Cloud.CFrame)
+        local hrp = plr.Character and plr.Character:FindFirstChild("HumanoidRootPart")
+        if hrp and selteam and selteam:FindFirstChild("Quest") and selteam.Quest:FindFirstChild("Cloud") then
+            hrp.CFrame = selteam.Quest.Cloud.CFrame
         end
     end
 })
