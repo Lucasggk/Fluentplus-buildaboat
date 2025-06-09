@@ -40,3 +40,16 @@ function Target(selteam)
         hrp.CFrame = part.CFrame
     end
 end
+
+function Ramp(selteam)
+    getquest(1)
+    noti()
+    local plr = game.Players.LocalPlayer
+    local char = plr.Character or plr.CharacterAdded:Wait()
+    local hrp = char:WaitForChild("HumanoidRootPart", 5)
+    if not selteam then return end
+    local target = selteam.Quest.Ramp:GetChildren()[25]
+    if hrp and target then
+        hrp.CFrame = target.CFrame * CFrame.new(0, -15, 0)
+    end
+end
