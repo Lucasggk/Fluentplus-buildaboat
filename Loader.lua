@@ -241,11 +241,12 @@ quest:AddButton({
     Description = "Teleporta para o ponto da missão do time selecionado",
     Callback = function()
         local plr = game.Players.LocalPlayer
-local char = plr.Character or plr.CharacterAdded:Wait()
-local hrp = char:WaitForChild("HumanoidRootPart", 5)
-local part = workspace.selteam.Quest.Cloud:FindFirstChild("Part1")
-if hrp and part then
-    hrp.CFrame = part.CFrame
-			end
+        local char = plr.Character or plr.CharacterAdded:Wait()
+        local hrp = char:WaitForChild("HumanoidRootPart", 5)
+        if not selteam then return end
+        local part = selteam.Quest.Cloud:FindFirstChild("Part1")
+        if hrp and part then
+            hrp.CFrame = part.CFrame
+        end
     end
 })
