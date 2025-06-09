@@ -240,6 +240,12 @@ TeamSelect:OnChanged(function(Value)
     end
 end)
 
+print(selteam.Quest.Cloud)
+print(typeof(selteam.Quest.Cloud))
+print(selteam.Quest.Cloud.CFrame)
+print(typeof(selteam.Quest.Cloud.CFrame))
+
+
 quest:AddButton({
     Title = "Teleportar para Quest",
     Description = "Teleporta para o ponto da missão do time selecionado",
