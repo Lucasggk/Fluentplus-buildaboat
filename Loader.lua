@@ -241,3 +241,17 @@ end)
 
 local section = quest:AddSection("Escolha a Quest: ")
 
+local selectquest = quest:AddDropdown("", {
+    Title = "Escolha a quest\n",
+    Description = "",
+    Values = {"[1] Cloud"}
+    Multi = false,
+    Default = "",
+})
+
+selectquest:OnChanged(function(Value)
+    if Value == "[1] Cloud" then
+	Cloud(selteam)
+        Dropdown:SetValue()
+    end
+end)
