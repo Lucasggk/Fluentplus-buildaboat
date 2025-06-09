@@ -1,4 +1,5 @@
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+task.wait(0.1)
 Fluent:Destroy()
 
 function getquest(a)
