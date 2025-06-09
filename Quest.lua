@@ -66,4 +66,25 @@ end
 function gelo()
     getquest(9)
 
+    local TweenService = game:GetService("TweenService")
+    local Player = game.Players.LocalPlayer
+    local HRP = Player.Character:WaitForChild("HumanoidRootPart")
+
+    local function moveToPosition(targetPos, speed)
+        local distance = (HRP.Position - targetPos).Magnitude
+        local time = distance / speed
+        local tweenInfo = TweenInfo.new(time, Enum.EasingStyle.Linear)
+        local goal = {CFrame = CFrame.new(targetPos)}
+        local tween = TweenService:Create(HRP, tweenInfo, goal)
+        tween:Play()
+        tween.Completed:Wait()
+    end
+
+    moveToPosition(Vector3.new(-49.458, 65.89, 408.081), 10000)
+    moveToPosition(Vector3.new(-59.102, 65.665, 8656.818), 650)
+    moveToPosition(Vector3.new(-54.430, -357.643, 9500.155), 500)
+
+    for i = 1, 5 do
+        HRP.CFrame = CFrame.new(-53, -363, 9502)
+    end
 end
