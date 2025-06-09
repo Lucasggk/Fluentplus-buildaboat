@@ -259,5 +259,9 @@ quest:AddButton({
         if hrp and selteam and selteam:FindFirstChild("Quest") and selteam.Quest:FindFirstChild("Cloud") then
             hrp.CFrame = selteam.Quest.Cloud.CFrame
         end
+	print(selteam.Quest.Cloud)
+print(typeof(selteam.Quest.Cloud))
+print(selteam.Quest.Cloud.CFrame)
+print(typeof(selteam.Quest.Cloud.CFrame))
     end
 })
