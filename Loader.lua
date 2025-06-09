@@ -252,6 +252,6 @@ local selectquest = quest:AddDropdown("", {
 selectquest:OnChanged(function(Value)
     if Value == "[1] Cloud" then
 	Cloud(selteam)
-        Dropdown:SetValue()
+        selectquest:SetValue()
     end
 end)
