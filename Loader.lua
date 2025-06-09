@@ -30,6 +30,11 @@ local loja = Window:AddTab({
     Icon = "list"
 })
 
+local quest = Window:AddTab({
+    Title = "quest",
+    Icon = "list"
+})
+
 local config = Window:AddTab({
     Title = "configurações",
     Icon = "settings"
@@ -201,3 +206,43 @@ loja:AddButton({
     end
 })
 
+-- outro tab
+
+local selteam
+
+local TeamSelect = Quest:AddDropdown("TeamSelect", {
+    Title = "Selecione o time",
+    Description = "Escolha um time da lista",
+    Values = {"Branco", "Preto", "Vermelho", "Verde", "Azul", "Amarelo", "Roxo"},
+    Multi = false,
+    Default = 1,
+})
+
+TeamSelect:OnChanged(function(Value)
+    if Value == "Azul" then
+        SelTeam = workspace["Really blueZone"]
+    elseif Value == "Vermelho" then
+        SelTeam = workspace["Really redZone"]
+    elseif Value == "Branco" then
+        SelTeam = workspace.WhiteZone
+    elseif Value == "Preto" then
+        SelTeam = workspace.BlackZone
+    elseif Value == "Verde" then
+        SelTeam = workspace.CamoZone
+    elseif Value == "Amarelo" then
+        SelTeam = workspace["New YellerZone"]
+    elseif Value == "Roxo" then
+        SelTeam = workspace.MagentaZone
+    end
+end)
+
+Quest:AddButton({
+    Title = "Teleportar para Quest",
+    Description = "Teleporta para o ponto da missão do time selecionado",
+    Callback = function()
+        local plr = game.Players.LocalPlayer
+        if plr.Character and SelTeam and SelTeam:FindFirstChild("Quest") and SelTeam.Quest:FindFirstChild("Cloud") then
+            plr.Character:PivotTo(selteam.Quest.Cloud.CFrame)
+        end
+    end
+})
