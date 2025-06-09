@@ -65,7 +65,7 @@ end
 
 function gelo()
     getquest(9)
-
+    noti()
     local TweenService = game:GetService("TweenService")
     local Player = game.Players.LocalPlayer
     local HRP = Player.Character:WaitForChild("HumanoidRootPart")
@@ -91,7 +91,7 @@ end
 
 function manteiga(selteam)
     getquest(4)
-
+    noti()
     local objeto = selteam.Quest.Butter.PPart
     local clickDetector = objeto:FindFirstChild("ClickDetector")
 
