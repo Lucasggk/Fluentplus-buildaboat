@@ -257,7 +257,8 @@ selectquest:OnChanged(function(Value)
     elseif Value == "[2] Target" then
 	Target(selteam)
 	selectquest:SetValue()
-    elseif Value == "[3] Futeboll"
+    elseif Value == "[3] Futeboll" then
+	Futeboll(selteam)
         selectquest:SetValue()
     elseif Value == "[4] Ramp" then
 	Ramp(selteam)
