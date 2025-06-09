@@ -15,5 +15,3 @@ if spike < spike_suf then
   end
 end 
 
-
-
