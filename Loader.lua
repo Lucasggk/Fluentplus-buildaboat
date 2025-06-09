@@ -210,7 +210,7 @@ loja:AddButton({
 
 local selteam
 
-local TeamSelect = Quest:AddDropdown("TeamSelect", {
+local TeamSelect = quest:AddDropdown("TeamSelect", {
     Title = "Selecione o time",
     Description = "Escolha um time da lista",
     Values = {"Branco", "Preto", "Vermelho", "Verde", "Azul", "Amarelo", "Roxo"},
@@ -236,7 +236,7 @@ TeamSelect:OnChanged(function(Value)
     end
 end)
 
-Quest:AddButton({
+quest:AddButton({
     Title = "Teleportar para Quest",
     Description = "Teleporta para o ponto da missão do time selecionado",
     Callback = function()
