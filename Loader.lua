@@ -216,7 +216,7 @@ local section = quest:AddSection("Coloque seu time:")
 local TeamSelect = quest:AddDropdown("TeamSelect", {
     Title = "Selecione o time",
     Description = "Escolha um time da lista",
-    Values = {"Branco", "Preto", "Vermelho", "Verde", "Azul", "Amarelo", "Roxo"},
+    Values = {"Branco", "Preto", "Vermelho", "Verde", "Azul", "Amarelo", "Magenta"},
     Multi = false,
     Default = 1,
 })
@@ -234,7 +234,7 @@ TeamSelect:OnChanged(function(Value)
         selteam = workspace.CamoZone
     elseif Value == "Amarelo" then
         selteam = workspace["New YellerZone"]
-    elseif Value == "Roxo" then
+    elseif Value == "Magenta" then
         selteam = workspace.MagentaZone
     end
 end)
