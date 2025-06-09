@@ -210,6 +210,8 @@ loja:AddButton({
 
 local selteam
 
+local section = quest:AddSection("Coloque seu time:")
+
 local TeamSelect = quest:AddDropdown("TeamSelect", {
     Title = "Selecione o time",
     Description = "Escolha um time da lista",
@@ -236,17 +238,5 @@ TeamSelect:OnChanged(function(Value)
     end
 end)
 
-quest:AddButton({
-    Title = "Teleportar para Quest",
-    Description = "Teleporta para o ponto da missão do time selecionado",
-    Callback = function()
-        local plr = game.Players.LocalPlayer
-        local char = plr.Character or plr.CharacterAdded:Wait()
-        local hrp = char:WaitForChild("HumanoidRootPart", 5)
-        if not selteam then return end
-        local part = selteam.Quest.Cloud:FindFirstChild("Part1")
-        if hrp and part then
-            hrp.CFrame = part.CFrame
-        end
-    end
-})
+local section = quest:AddSection("Escolha a Quest: ")
+
