@@ -246,5 +246,7 @@ quest:AddButton({
     Description = "Chama a função Cloud()",
     Callback = function()
         Cloud(selteam)
+	task.wait(2)
+	tlob(selteam)
     end
 })
