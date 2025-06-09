@@ -41,6 +41,14 @@ function Target(selteam)
     end
 end
 
+function Futeboll(selteam)
+    Fluent:Notify({
+        Title = "Fazendo missão..",
+        Content = "Sem suporte para essa missão no momento.",
+        Duration = 3
+    })
+end
+
 function Ramp(selteam)
     getquest(1)
     noti()
