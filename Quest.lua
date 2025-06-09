@@ -7,7 +7,7 @@ function getquest(a)
     task.wait(1)
 end
 
-function Teleportar()
+function tplobby()
     local Player = game.Players.LocalPlayer
     local HRP = Player.Character and Player.Character:FindFirstChild("HumanoidRootPart")
 
