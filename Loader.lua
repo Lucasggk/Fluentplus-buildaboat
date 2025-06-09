@@ -245,6 +245,6 @@ quest:AddButton({
     Title = "Executar Cloud",
     Description = "Chama a função Cloud()",
     Callback = function()
-        Cloud()
+        Cloud(selteam)
     end
 })
