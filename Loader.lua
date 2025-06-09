@@ -3,6 +3,7 @@ if not game:IsLoaded() then
 end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Lucasggk/Fluentplus-buildaboat/refs/heads/main/Fix%20ui%20name.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Lucasggk/Fluentplus-buildaboat/refs/heads/main/Quest.lua"))()
 local dni = game.Players.LocalPlayer:WaitForChild("Data"):WaitForChild("Gold").Value
 
 local function getMoney()
