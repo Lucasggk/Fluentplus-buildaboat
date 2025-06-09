@@ -220,19 +220,19 @@ local TeamSelect = quest:AddDropdown("TeamSelect", {
 
 TeamSelect:OnChanged(function(Value)
     if Value == "Azul" then
-        SelTeam = workspace["Really blueZone"]
+        selteam = workspace["Really blueZone"]
     elseif Value == "Vermelho" then
-        SelTeam = workspace["Really redZone"]
+        selteam = workspace["Really redZone"]
     elseif Value == "Branco" then
-        SelTeam = workspace.WhiteZone
+        selteam = workspace.WhiteZone
     elseif Value == "Preto" then
-        SelTeam = workspace.BlackZone
+        selteam = workspace.BlackZone
     elseif Value == "Verde" then
-        SelTeam = workspace.CamoZone
+        selteam = workspace.CamoZone
     elseif Value == "Amarelo" then
-        SelTeam = workspace["New YellerZone"]
+        selteam = workspace["New YellerZone"]
     elseif Value == "Roxo" then
-        SelTeam = workspace.MagentaZone
+        selteam = workspace.MagentaZone
     end
 end)
 
