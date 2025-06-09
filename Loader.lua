@@ -11,6 +11,14 @@ local function getMoney()
 end
 			
 local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/discoart/FluentPlus/refs/heads/main/release.lua", true))()
+function noti()
+    Fluent:Notify({
+        Title = "Fazendo missão..",
+        Content = "Aguarde",
+        Duration = 3
+    })
+end
+
 
 local Window = Fluent:CreateWindow({
     Title = "Build A Boat",
@@ -251,6 +259,7 @@ local selectquest = quest:AddDropdown("", {
 
 selectquest:OnChanged(function(Value)
     if Value == "[1] Cloud" then
+	noti()
 	Cloud(selteam)
         selectquest:SetValue()
     end
