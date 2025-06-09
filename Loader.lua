@@ -253,6 +253,7 @@ local selectquest = quest:AddDropdown("", {
         "[1] Cloud",
         "[2] Target",
         "[3] Ramp",
+        "[4] butter", 
         "[8] Futeboll",
         "[9] Ice"
     },
@@ -269,6 +270,9 @@ selectquest:OnChanged(function(Value)
         selectquest:SetValue()
     elseif Value == "[3] Ramp" then
         Ramp(selteam)
+        selectquest:SetValue()
+    elseif Value == "[4] butter" then
+        manteiga(selteam)
         selectquest:SetValue()
     elseif Value == "[8] Futeboll" then
         Futeboll(selteam)
