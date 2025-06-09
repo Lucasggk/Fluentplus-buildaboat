@@ -251,6 +251,7 @@ quest:AddButton({
     Description = "Teleporta para o ponto da missão do time selecionado",
     Callback = function()
         pegarm(0)
+	task.wait(0.1)
         pegarm(1)
         local plr = game.Players.LocalPlayer
         local hrp = plr.Character and plr.Character:FindFirstChild("HumanoidRootPart")
