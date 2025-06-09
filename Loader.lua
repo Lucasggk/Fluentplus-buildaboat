@@ -241,7 +241,7 @@ quest:AddButton({
     Description = "Teleporta para o ponto da missão do time selecionado",
     Callback = function()
         local plr = game.Players.LocalPlayer
-        if plr.Character and SelTeam and SelTeam:FindFirstChild("Quest") and SelTeam.Quest:FindFirstChild("Cloud") then
+        if plr.Character and selteam and selteam:FindFirstChild("Quest") and selteam.Quest:FindFirstChild("Cloud") then
             plr.Character:PivotTo(selteam.Quest.Cloud.CFrame)
         end
     end
