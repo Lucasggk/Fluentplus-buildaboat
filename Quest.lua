@@ -28,3 +28,15 @@ function Cloud(selteam)
     end
 end
 
+function Target(selteam)
+    getquest(2)
+    noti()
+    local plr = game.Players.LocalPlayer
+    local char = plr.Character or plr.CharacterAdded:Wait()
+    local hrp = char:WaitForChild("HumanoidRootPart", 5)
+    if not selteam then return end
+    local part = selteam.Quest.Target:GetChildren()[6]
+    if hrp and part then
+        hrp.CFrame = part.CFrame
+    end
+end
