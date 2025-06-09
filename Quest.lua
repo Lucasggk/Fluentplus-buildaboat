@@ -59,7 +59,7 @@ function Ramp(selteam)
     if not selteam then return end
     local target = selteam.Quest.Ramp:GetChildren()[25]
     if hrp and target then
-        hrp.CFrame = target.CFrame * CFrame.new(0, -15, 0)
+        hrp.CFrame = target.CFrame * CFrame.new(0, 0, 0)
     end
 end
 
